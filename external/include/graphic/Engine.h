@@ -21,7 +21,7 @@ class Engine
             TEXTURE_MAX
         };
 
-        Engine(const char* assetsDirectory);
+        Engine(const char *assetsDirectory);
         ~Engine();
 
         float GetLastFrameSeconds() const;

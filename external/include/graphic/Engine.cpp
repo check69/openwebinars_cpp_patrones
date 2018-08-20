@@ -57,8 +57,8 @@ struct Engine::EngineImplementation
     void ParseEvents();
 };
 
-Engine::Engine(const char* assetsDirectory)
-    : m_pImpl(new EngineImplementation)
+Engine::Engine(const char* assetsDirectory) :
+    m_pImpl(new EngineImplementation)
 {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
