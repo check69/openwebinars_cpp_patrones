@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{1657dfef-7f6a-48bd-b545-6cb39a79ce01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{614d8a2a-9239-4932-96cf-4758d5c55d91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{7edab06f-4695-400b-b556-d3f0cfb05fb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{f9d687e6-3798-4b8a-8fa5-06463935a4e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external">
+      <UniqueIdentifier>{277200f6-6665-422b-b932-b196f522d7ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external\rapidXml">
+      <UniqueIdentifier>{37058eff-7140-46f5-a93b-3e66f36892d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\external">
+      <UniqueIdentifier>{200fa787-90a7-4f67-b8c5-2b0b2e023a5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external\randomWrapper">
+      <UniqueIdentifier>{b3472cce-2c74-48f0-8a1e-fda6eea69c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Actions">
+      <UniqueIdentifier>{e4291c18-fa6c-43c3-b8f0-2b7da933c6fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Actions">
+      <UniqueIdentifier>{5671790f-f1f2-4615-b36b-06e3e9c617e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game\Solvers">
+      <UniqueIdentifier>{5a5adb3c-12d9-4f51-98f2-59c44788c2e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Game\Solvers">
+      <UniqueIdentifier>{30ef4fe4-e263-49ed-ae17-ae28cac1605d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\external\graphiclib">
+      <UniqueIdentifier>{b6b1c2f0-aca5-4906-8fdc-ee7e627d96af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\external\graphiclib">
+      <UniqueIdentifier>{900d46bf-98ff-4803-a73f-3fb34dfcce11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Diamond.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utils\files.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\initGame.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Map.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\utils\math.cpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\ActionBlockingStack.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\ActionGenerateDiamond.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\ActionMove.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\ActionStack.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\TimeDecreaseAction.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Solvers\UserInputSolver.cpp">
+      <Filter>Source Files\Game\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Solvers\SolverGrid2D.cpp">
+      <Filter>Source Files\Game\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Solvers\SolverRefill.cpp">
+      <Filter>Source Files\Game\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\InitGraphicMap.cpp">
+      <Filter>Source Files\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\game\Actions\ActionBlink.cpp">
+      <Filter>Source Files\Game\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\Engine.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\Font.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\GlContext.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\Sdl.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\SdlSurface.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\external\include\graphic\SdlWindow.cpp">
+      <Filter>Source Files\external\graphiclib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\external\include\rapidXML\rapidxml.hpp">
+      <Filter>Header Files\external\rapidXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_iterators.hpp">
+      <Filter>Header Files\external\rapidXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_print.hpp">
+      <Filter>Header Files\external\rapidXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_utils.hpp">
+      <Filter>Header Files\external\rapidXml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Diamond.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\files.hpp">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\initGame.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\randomWrapper\random.hpp">
+      <Filter>Header Files\external\randomWrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\InitGraphicMap.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Map.hpp">
+      <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\utils\math.hpp">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\Action.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionBlockingStack.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionCallable.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionGenerateDiamond.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionMove.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionPoints.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionSimpleMove.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionSimpleMoveDiamond.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionStack.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionSwapMove.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionSwapMoveDiamond.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionUpgradeScore.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\TimeAction.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\TimeDecreaseAction.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Solvers\Solver.hpp">
+      <Filter>Header Files\Game\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Solvers\SolverGrid2D.hpp">
+      <Filter>Header Files\Game\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Solvers\SolverRefill.hpp">
+      <Filter>Header Files\Game\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Solvers\SolverStack.hpp">
+      <Filter>Header Files\Game\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Solvers\UserInputSolver.hpp">
+      <Filter>Header Files\Game\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\game\Actions\ActionBlink.hpp">
+      <Filter>Header Files\Game\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\Engine.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\Font.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\GlContext.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\Sdl.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\SdlSurface.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\SdlWindow.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\external\include\graphic\Updater.h">
+      <Filter>Header Files\external\graphiclib</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

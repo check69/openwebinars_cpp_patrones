@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A355810E-BD4D-42D6-A615-209F44E8FB2F}</ProjectGuid>
+    <RootNamespace>Worktest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)external/include;$(SolutionDir)src;$(SolutionDir)include;$(IncludePath);$(SolutionDir)src</IncludePath>
+    <LibraryPath>$(SolutionDir)external/lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)external/include;$(SolutionDir)src;$(IncludePath);$(SolutionDir)src</IncludePath>
+    <LibraryPath>$(SolutionDir)external/lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glew32s.lib;SDL2.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;glew32.lib;glew32s.lib;SDL2.lib;SDL2_image.lib;SDL2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\external\include\graphic\Engine.cpp" />
+    <ClCompile Include="..\external\include\graphic\Font.cpp" />
+    <ClCompile Include="..\external\include\graphic\GlContext.cpp" />
+    <ClCompile Include="..\external\include\graphic\Sdl.cpp" />
+    <ClCompile Include="..\external\include\graphic\SdlSurface.cpp" />
+    <ClCompile Include="..\external\include\graphic\SdlWindow.cpp" />
+    <ClCompile Include="..\src\game\Actions\ActionBlink.cpp" />
+    <ClCompile Include="..\src\game\Actions\ActionBlockingStack.cpp" />
+    <ClCompile Include="..\src\game\Actions\ActionGenerateDiamond.cpp" />
+    <ClCompile Include="..\src\game\Actions\ActionMove.cpp" />
+    <ClCompile Include="..\src\game\Actions\ActionStack.cpp" />
+    <ClCompile Include="..\src\game\Actions\TimeDecreaseAction.cpp" />
+    <ClCompile Include="..\src\game\Diamond.cpp" />
+    <ClCompile Include="..\src\game\initGame.cpp" />
+    <ClCompile Include="..\src\game\InitGraphicMap.cpp" />
+    <ClCompile Include="..\src\game\Map.cpp" />
+    <ClCompile Include="..\src\game\Solvers\SolverGrid2D.cpp" />
+    <ClCompile Include="..\src\game\Solvers\SolverRefill.cpp" />
+    <ClCompile Include="..\src\game\Solvers\UserInputSolver.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\utils\files.cpp" />
+    <ClCompile Include="..\src\utils\math.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\external\include\graphic\Engine.h" />
+    <ClInclude Include="..\external\include\graphic\Font.h" />
+    <ClInclude Include="..\external\include\graphic\GlContext.h" />
+    <ClInclude Include="..\external\include\graphic\Sdl.h" />
+    <ClInclude Include="..\external\include\graphic\SdlSurface.h" />
+    <ClInclude Include="..\external\include\graphic\SdlWindow.h" />
+    <ClInclude Include="..\external\include\graphic\Updater.h" />
+    <ClInclude Include="..\external\include\randomWrapper\random.hpp" />
+    <ClInclude Include="..\external\include\rapidXML\rapidxml.hpp" />
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_iterators.hpp" />
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_print.hpp" />
+    <ClInclude Include="..\external\include\rapidXML\rapidxml_utils.hpp" />
+    <ClInclude Include="..\src\game\Actions\Action.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionBlink.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionBlockingStack.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionCallable.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionGenerateDiamond.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionMove.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionPoints.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionSimpleMove.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionSimpleMoveDiamond.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionStack.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionSwapMove.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionSwapMoveDiamond.hpp" />
+    <ClInclude Include="..\src\game\Actions\ActionUpgradeScore.hpp" />
+    <ClInclude Include="..\src\game\Actions\TimeAction.hpp" />
+    <ClInclude Include="..\src\game\Actions\TimeDecreaseAction.hpp" />
+    <ClInclude Include="..\src\game\Diamond.hpp" />
+    <ClInclude Include="..\src\game\initGame.hpp" />
+    <ClInclude Include="..\src\game\InitGraphicMap.hpp" />
+    <ClInclude Include="..\src\game\Map.hpp" />
+    <ClInclude Include="..\src\game\Solvers\Solver.hpp" />
+    <ClInclude Include="..\src\game\Solvers\SolverGrid2D.hpp" />
+    <ClInclude Include="..\src\game\Solvers\SolverRefill.hpp" />
+    <ClInclude Include="..\src\game\Solvers\SolverStack.hpp" />
+    <ClInclude Include="..\src\game\Solvers\UserInputSolver.hpp" />
+    <ClInclude Include="..\src\utils\files.hpp" />
+    <ClInclude Include="..\src\utils\math.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
