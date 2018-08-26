@@ -3,9 +3,6 @@
 
 #include <string>
 
-namespace testGame
-{
-    std::string loadFile (const std::string& file);
-}
+std::string loadFile (const std::string& file);
 
 #endif

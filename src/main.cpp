@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     argv;
     argc;
-    testGame::InitGame().start();
+    InitGame().start();
 
     return 0;
 }

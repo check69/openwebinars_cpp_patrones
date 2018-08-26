@@ -10,24 +10,21 @@
 #include <game/Actions/ActionGenerateDiamond.hpp>
 #include <game/Actions/ActionCallable.hpp>
 
-namespace testGame
+class SolverRefill : public Solver
 {
-    class SolverRefill : public Solver
-    {
-        public:
-                                SolverRefill(Map& map,
-                                             const float& timedelta);
-            virtual            ~SolverRefill();
-            virtual ActionPtr   check () override;
+    public:
+                            SolverRefill(Map& map,
+                                            const float& timedelta);
+        virtual            ~SolverRefill();
+        virtual ActionPtr   check () override;
 
-        private:
-            Map&            m_map;
-            InitGraphicMap  m_graphicMap;
-            const float&    m_timedelta;
-            SolverRefill() = delete;
-    };
+    private:
+        Map&            m_map;
+        InitGraphicMap  m_graphicMap;
+        const float&    m_timedelta;
+        SolverRefill() = delete;
+};
 
-    using SolverRefillPtr = std::shared_ptr<SolverRefill>;
-}
+using SolverRefillPtr = std::shared_ptr<SolverRefill>;
 
 #endif

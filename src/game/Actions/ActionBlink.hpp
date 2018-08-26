@@ -5,25 +5,22 @@
 #include <game/Diamond.hpp>
 #include <utils/math.hpp>
 
-namespace testGame
+class ActionBlink : public TimeAction
 {
-    class ActionBlink : public TimeAction
-    {
-        public:
-            ActionBlink(DiamondPtr diamond, const float& timeDelta, float timeToBlink);
+    public:
+        ActionBlink(DiamondPtr diamond, const float& timeDelta, float timeToBlink);
 
-            virtual        ~ActionBlink ();
-            virtual void    execute     () override;
-            virtual void    finish      ();
+        virtual        ~ActionBlink ();
+        virtual void    execute     () override;
+        virtual void    finish      ();
 
-        protected:
-            DiamondPtr m_diamond;
-            float m_timeToBlink;
-            float m_currentTime;
+    protected:
+        DiamondPtr m_diamond;
+        float m_timeToBlink;
+        float m_currentTime;
 
-        private:
-            ActionBlink() = delete;
-    };
-}
+    private:
+        ActionBlink() = delete;
+};
 
 #endif //!__ACTIONBLINK_HPP__

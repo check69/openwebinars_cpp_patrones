@@ -5,21 +5,18 @@
 
 #include <memory>
 
-namespace testGame
+class ActionPoints : public Action
 {
-    class ActionPoints : public Action
-    {
-        public:
-                            ActionPoints    (unsigned int& score) : m_score(score) {}
-            virtual        ~ActionPoints    () {}
-            virtual void    execute         () override = 0;
+public:
+    ActionPoints    (unsigned int& score) : m_score(score) {}
+    virtual        ~ActionPoints    () {}
+    virtual void    execute         () override = 0;
 
-        protected:
-            unsigned int& m_score;
+protected:
+    unsigned int& m_score;
 
-        private:
-            ActionPoints    () = delete;
-    };
-}
+private:
+    ActionPoints    () = delete;
+};
 
 #endif //!__ACTIONSPOINTS_HPP__

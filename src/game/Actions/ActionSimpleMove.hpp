@@ -8,30 +8,27 @@
 
 #include <memory>
 
-namespace testGame
+class ActionSimpleMove : public ActionBlockingStack
 {
-    class ActionSimpleMove : public ActionBlockingStack
-    {
-        public:
-            ActionSimpleMove(vec2& toMove1, vec2& toMove2, float& timedelta, float speed) :
-                ActionBlockingStack(
-                {
-                    ActionPtr(
-                        new ActionStack
-                        {
-                            ActionPtr(new ActionMove(toMove1, toMove2, timedelta, speed)),
-                            ActionPtr(new ActionMove(toMove2, toMove1, timedelta, speed))
-                        }),
-                })
+    public:
+        ActionSimpleMove(vec2& toMove1, vec2& toMove2, float& timedelta, float speed) :
+            ActionBlockingStack(
             {
-            }
+                ActionPtr(
+                    new ActionStack
+                    {
+                        ActionPtr(new ActionMove(toMove1, toMove2, timedelta, speed)),
+                        ActionPtr(new ActionMove(toMove2, toMove1, timedelta, speed))
+                    }),
+            })
+        {
+        }
 
-            virtual ~ActionSimpleMove() {}
+        virtual ~ActionSimpleMove() {}
 
-        private:
-            void    addAction           (ActionPtr action)  = delete;
-                    ActionSimpleMove    ()                  = delete;
-    };
-}
+    private:
+        void    addAction           (ActionPtr action)  = delete;
+                ActionSimpleMove    ()                  = delete;
+};
 
 #endif //!__ACTIONSIMPLEMOVE_HPP__

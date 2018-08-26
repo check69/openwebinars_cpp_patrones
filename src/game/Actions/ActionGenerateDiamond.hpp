@@ -6,22 +6,19 @@
 
 #include <memory>
 
-namespace testGame
+class ActionGenerateDiamond : public Action
 {
-    class ActionGenerateDiamond : public Action
-    {
-        public:
-                            ActionGenerateDiamond   (std::shared_ptr<Diamond> diamond);
-            virtual        ~ActionGenerateDiamond   ();
-            virtual void    execute                 () override;
+    public:
+                        ActionGenerateDiamond   (std::shared_ptr<Diamond> diamond);
+        virtual        ~ActionGenerateDiamond   ();
+        virtual void    execute                 () override;
 
-        protected:
-            ActionGenerateDiamond() = delete;
+    protected:
+        ActionGenerateDiamond() = delete;
 
-            std::shared_ptr<Diamond> m_diamond;
-    };
+        std::shared_ptr<Diamond> m_diamond;
+};
 
-    using ActionGenerateDiamondPtr = std::shared_ptr<ActionGenerateDiamond>;
-}
+using ActionGenerateDiamondPtr = std::shared_ptr<ActionGenerateDiamond>;
 
 #endif

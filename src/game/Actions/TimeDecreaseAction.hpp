@@ -3,20 +3,17 @@
 
 #include <game/Actions/TimeAction.hpp>
 
-namespace testGame
+class TimeDecrease : public TimeAction
 {
-    class TimeDecrease : public TimeAction
-    {
-        public:
-                         TimeDecrease   (const float& timeDelta,
-                                         float& time);
-            virtual     ~TimeDecrease   () override;
+    public:
+                        TimeDecrease   (const float& timeDelta,
+                                        float& time);
+        virtual     ~TimeDecrease   () override;
 
-            virtual void execute        ();
+        virtual void execute        ();
 
-        protected:
-            float& m_time;
-    };
-}
+    protected:
+        float& m_time;
+};
 
 #endif // !__TIME_DECREASE_H__

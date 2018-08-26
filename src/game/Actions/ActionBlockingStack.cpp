@@ -1,7 +1,5 @@
 #include "ActionBlockingStack.hpp"
 
-namespace testGame
-{
 ActionBlockingStack::ActionBlockingStack() : ActionStack(), m_currentAction(nullptr) {}
 ActionBlockingStack::ActionBlockingStack(std::list<std::shared_ptr<Action>> actions)
     : ActionStack(actions), m_currentAction(actions.front())
@@ -59,5 +57,4 @@ void ActionBlockingStack::updateCurrent()
         m_currentAction = nullptr;
         m_state         = STATE::FINISHED;
     }
-}
 }

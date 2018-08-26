@@ -7,48 +7,45 @@
 #include <list>
 #include <memory>
 
-namespace testGame
+class SolverStack : public Solver
 {
-    class SolverStack : public Solver
-    {
-        public:
-                        SolverStack()                               {}
-                        SolverStack(std::list<SolverPtr> solvers) :
-                            m_solvers(solvers)                      {}
-                       virtual ~SolverStack()                       {}
+    public:
+                    SolverStack()                               {}
+                    SolverStack(std::list<SolverPtr> solvers) :
+                        m_solvers(solvers)                      {}
+                    virtual ~SolverStack()                       {}
 
-            ActionPtr   check() override
+        ActionPtr   check() override
+        {
+            bool isReturnActions = false;
+            ActionBlockingStackPtr actions(new ActionBlockingStack());
+            for (auto solver : m_solvers)
             {
-                bool isReturnActions = false;
-                ActionBlockingStackPtr actions(new ActionBlockingStack());
-                for (auto solver : m_solvers)
+                ActionPtr action(solver->check());
+                if (action)
                 {
-                    ActionPtr action(solver->check());
-                    if (action)
-                    {
-                        isReturnActions = true;
-                        actions->addAction(action);
-                    }
-                }
-
-                if (isReturnActions)
-                {
-                    return actions;
-                }
-                else
-                {
-                    return nullptr;
+                    isReturnActions = true;
+                    actions->addAction(action);
                 }
             }
 
-            void addSolver(SolverPtr solver)
+            if (isReturnActions)
             {
-                m_solvers.push_back(solver);
+                return actions;
             }
+            else
+            {
+                return nullptr;
+            }
+        }
 
-        private:
-            std::list<SolverPtr> m_solvers{};
-    };
-}
+        void addSolver(SolverPtr solver)
+        {
+            m_solvers.push_back(solver);
+        }
+
+    private:
+        std::list<SolverPtr> m_solvers{};
+};
 
 #endif //!__SOLVERSTACK_HPP__

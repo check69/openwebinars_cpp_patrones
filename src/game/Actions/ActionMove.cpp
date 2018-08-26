@@ -1,7 +1,7 @@
 #include "ActionMove.hpp"
 #include <cmath>
 
-void testGame::ActionMove::execute()
+void ActionMove::execute()
 {
     if (m_state == STATE::RUNNING)
     {

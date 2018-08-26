@@ -13,25 +13,22 @@ the consecutive actions will not be run till the previous ones are finished.
 The stack will be finished once it has no more runnable actions inside.
 */
 
-namespace testGame
+class ActionBlockingStack : public ActionStack
 {
-    class ActionBlockingStack : public ActionStack
-    {
-        public:
-                            ActionBlockingStack ();
-                            ActionBlockingStack (std::list<std::shared_ptr<Action>> actions);
-                            ActionBlockingStack (std::initializer_list<std::shared_ptr<Action>> actions);
-            virtual        ~ActionBlockingStack ();
-            virtual void    execute             () override;
-            virtual void    activateAll         () override;
+    public:
+                        ActionBlockingStack ();
+                        ActionBlockingStack (std::list<std::shared_ptr<Action>> actions);
+                        ActionBlockingStack (std::initializer_list<std::shared_ptr<Action>> actions);
+        virtual        ~ActionBlockingStack ();
+        virtual void    execute             () override;
+        virtual void    activateAll         () override;
 
-        protected:
-            void updateCurrent();
+    protected:
+        void updateCurrent();
 
-            std::shared_ptr<Action> m_currentAction;
-    };
+        std::shared_ptr<Action> m_currentAction;
+};
 
-    using ActionBlockingStackPtr = std::shared_ptr<ActionBlockingStack>;
-}
+using ActionBlockingStackPtr = std::shared_ptr<ActionBlockingStack>;
 
 #endif    // !__ACTIONSTACK_H__

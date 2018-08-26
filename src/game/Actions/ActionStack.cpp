@@ -2,60 +2,57 @@
 
 #include <functional>
 
-namespace testGame
+ActionStack::ActionStack() : Action() {}
+ActionStack::ActionStack(std::list<std::shared_ptr<Action>>& actions) : m_actions(actions) {}
+ActionStack::ActionStack(std::initializer_list<std::shared_ptr<Action>> actions)
+    : m_actions(actions)
 {
-    ActionStack::ActionStack() : Action() {}
-    ActionStack::ActionStack(std::list<std::shared_ptr<Action>>& actions) : m_actions(actions) {}
-    ActionStack::ActionStack(std::initializer_list<std::shared_ptr<Action>> actions)
-        : m_actions(actions)
+}
+
+ActionStack::~ActionStack() { m_actions.clear(); }
+void ActionStack::execute()
+{
+    for (auto& a : m_actions)
     {
+        a->execute();
     }
 
-    ActionStack::~ActionStack() { m_actions.clear(); }
-    void ActionStack::execute()
-    {
-        for (auto& a : m_actions)
-        {
-            a->execute();
-        }
+    cleanUp();
 
-        cleanUp();
-
-        if (!m_actions.size())
-        {
-            m_state = STATE::FINISHED;
-        }
-    }
-
-    void ActionStack::addAction(std::shared_ptr<Action> action) { m_actions.push_back(action); }
-    void                                                ActionStack::activateAll()
+    if (!m_actions.size())
     {
-        activate();
-        for (auto& a : m_actions)
-        {
-            a->activateAll();
-        }
+        m_state = STATE::FINISHED;
     }
+}
 
-    void ActionStack::deactivateAll()
+void ActionStack::addAction(std::shared_ptr<Action> action) { m_actions.push_back(action); }
+void                                                ActionStack::activateAll()
+{
+    activate();
+    for (auto& a : m_actions)
     {
-        deactivate();
-        for (auto& a : m_actions)
-        {
-            a->deactivateAll();
-        }
+        a->activateAll();
     }
+}
 
-    void ActionStack::finishAll()
+void ActionStack::deactivateAll()
+{
+    deactivate();
+    for (auto& a : m_actions)
     {
-        finish();
-        for (auto& a : m_actions)
-        {
-            a->finishAll();
-        }
+        a->deactivateAll();
     }
-    void ActionStack::cleanUp()
+}
+
+void ActionStack::finishAll()
+{
+    finish();
+    for (auto& a : m_actions)
     {
-        m_actions.remove_if([](auto& action) { return action->getState() == Action::STATE::FINISHED; });
+        a->finishAll();
     }
+}
+void ActionStack::cleanUp()
+{
+    m_actions.remove_if([](auto& action) { return action->getState() == Action::STATE::FINISHED; });
 }

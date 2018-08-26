@@ -4,25 +4,22 @@
 #include <game/Actions/TimeAction.hpp>
 #include <utils/math.hpp>
 
-namespace testGame
+class ActionMove : public TimeAction
 {
-    class ActionMove : public TimeAction
-    {
-        public:
-            ActionMove(vec2& movable, const vec2& destiny, const float& timeDelta, float speed) :
-                TimeAction(timeDelta), m_2move(movable), m_destiny(destiny), m_speed(speed) {}
+    public:
+        ActionMove(vec2& movable, const vec2& destiny, const float& timeDelta, float speed) :
+            TimeAction(timeDelta), m_2move(movable), m_destiny(destiny), m_speed(speed) {}
 
-            virtual        ~ActionMove  () {}
-            virtual void    execute     () override;
+        virtual        ~ActionMove  () {}
+        virtual void    execute     () override;
 
-        protected:
-            vec2& m_2move;
-            vec2  m_destiny;
-            float m_speed;
+    protected:
+        vec2& m_2move;
+        vec2  m_destiny;
+        float m_speed;
 
-        private:
-            ActionMove() = delete;
-    };
-}
+    private:
+        ActionMove() = delete;
+};
 
 #endif //!__ACTIONMOVE_HPP__
