@@ -5,7 +5,7 @@
 #include <sdl/SDL.h>
 
 SdlWindow::SdlWindow(unsigned int width, unsigned int height) :
-    m_pSDLWindow(SDL_CreateWindow("KingTest",
+    m_pSDLWindow(SDL_CreateWindow("Openwebinars",
                                 SDL_WINDOWPOS_UNDEFINED,
                                 SDL_WINDOWPOS_UNDEFINED,
                                 width, height,

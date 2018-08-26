@@ -3,8 +3,15 @@
 #include <glm/fwd.hpp>
 #include <memory>
 
+/**
+ * Forward declaration.
+ */
 class Updater;
 
+/**
+ * Class Engine
+ * Main class of our engine.
+ */
 class Engine
 {
     public:
@@ -38,9 +45,9 @@ class Engine
         void Render(Texture texture, float x, float y, float rotation = 0.0f);
 
 
-        float CalculateStringWidth(const char* text) const;
-        void Write(const char* text, const glm::mat4& transform);
-        void Write(const char* text, float x, float y, float rotation = 0.0f);
+        float CalculateStringWidth(const char *text) const;
+        void Write(const char *text, const glm::mat4& transform);
+        void Write(const char *text, float x, float y, float rotation = 0.0f);
 
         int GetWidth() const;
         int GetHeight() const;

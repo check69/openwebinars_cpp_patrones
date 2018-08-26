@@ -1,7 +1,5 @@
 #pragma once
 
-struct Input;
-
 class Updater
 {
     public:

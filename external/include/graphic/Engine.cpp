@@ -57,7 +57,7 @@ struct Engine::EngineImplementation
     void ParseEvents();
 };
 
-Engine::Engine(const char* assetsDirectory) :
+Engine::Engine(const char *assetsDirectory) :
     m_pImpl(new EngineImplementation)
 {
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
@@ -183,7 +183,7 @@ Glyph& FindGlyph(char c)
     return *found;
 }
 
-float Engine::CalculateStringWidth(const char* text) const
+float Engine::CalculateStringWidth(const char *text) const
 {
     int advance = 0;
     for (; *text; ++text)
@@ -194,7 +194,7 @@ float Engine::CalculateStringWidth(const char* text) const
     return advance*TextScale;
 }
     
-void Engine::Write(const char* text, const glm::mat4& transform)
+void Engine::Write(const char *text, const glm::mat4& transform)
 {
     glLoadMatrixf(reinterpret_cast<const float*>(&transform));
     int advance = 0;
@@ -227,7 +227,7 @@ void Engine::Write(const char* text, const glm::mat4& transform)
     }
 }
 
-void Engine::Write(const char* text, float x, float y, float rotation) {
+void Engine::Write(const char *text, float x, float y, float rotation) {
     glm::mat4 transformation;
     transformation = glm::translate(transformation, glm::vec3(x, y, 0.0f));
     if (rotation)
