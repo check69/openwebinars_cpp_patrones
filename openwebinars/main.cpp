@@ -1,4 +1,5 @@
 #include "stl_examples.hpp"
+#include "smart_pointer.hpp"
 
 #include <iostream>
 
@@ -15,6 +16,9 @@ int main()
     listExample();
     setExample();
     mapExample();
+    smartPointers();
+
+    getchar();
 
     return 0;
 }

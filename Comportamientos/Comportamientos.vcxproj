@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{CFA85096-8320-4046-8CE0-1F7CA0690C4D}</ProjectGuid>
-    <RootNamespace>openwebinars</RootNamespace>
+    <ProjectGuid>{EA1BFE9C-C6AE-4F9C-A9DE-1A96106EA8A3}</ProjectGuid>
+    <RootNamespace>Comportamientos</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,17 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="basic_array_example.cpp" />
-    <ClCompile Include="deque_example.cpp" />
-    <ClCompile Include="list_example.cpp" />
-    <ClCompile Include="map_example.cpp" />
-    <ClCompile Include="set_example.cpp" />
-    <ClCompile Include="vector_example.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="memento.hpp" />
+    <ClInclude Include="observer.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="smart_pointer.hpp" />
-    <ClInclude Include="stl_examples.hpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
